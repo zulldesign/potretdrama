@@ -1,0 +1,40 @@
+2015-03-10 11:27:05,091 [8] NHibernate.AdoNet.AbstractBatcher - (null) - Could not execute query: select contenttyp0_.Id as Id237_, contenttyp0_.Name as Name237_, contenttyp0_.DisplayName as DisplayN3_237_, contenttyp0_.Hidden as Hidden237_, contenttyp0_.Settings as Settings237_ from orc1_Settings_ContentTypeDefinitionRecord contenttyp0_ where contenttyp0_.Name=@p0
+ (null)
+System.Threading.ThreadAbortException: Thread was being aborted.
+   at SNIReadSyncOverAsync(SNI_ConnWrapper* , SNI_Packet** , Int32 )
+   at SNINativeMethodWrapper.SNIReadSyncOverAsync(SafeHandle pConn, IntPtr& packet, Int32 timeout)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader()
+   at NHibernate.AdoNet.AbstractBatcher.ExecuteReader(IDbCommand cmd) in c:\Users\sebros\Documents\My Projects\nhibernate-core\src\NHibernate\AdoNet\AbstractBatcher.cs:line 223
+2015-03-10 11:27:05,877 [8] NHibernate.Util.ADOExceptionReporter - (null) - Thread was being aborted.
+ (null)
+2015-03-10 11:27:05,952 [8] NHibernate.Util.ADOExceptionReporter - (null) - Thread was being aborted.
+ (null)
+2015-03-10 11:27:05,955 [8] NHibernate.Util.ADOExceptionReporter - (null) - Thread was being aborted.
+ (null)
+2015-03-10 11:27:06,102 [8] Orchard.Data.Migration.DataMigrationManager - Default - Error while running migration version 0 for Orchard.Taxonomies
+ http://localhost:23340/
+System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Orchard.Data.Migration.DataMigrationManager.Update(String feature) in z:\Builds\work\d1eb156ccc3cb14\src\Orchard\Data\Migration\DataMigrationManager.cs:line 113
+2015-03-10 11:27:06,350 [8] NHibernate.Transaction.AdoTransaction - Default - Rollback failed
+ http://localhost:23340/
+System.InvalidOperationException: Invalid operation. The connection is closed.
+   at System.Data.SqlClient.SqlInternalConnectionTds.ValidateConnectionForExecute(SqlCommand command)
+   at System.Data.SqlClient.SqlInternalTransaction.Rollback()
+   at System.Data.SqlClient.SqlTransaction.Rollback()
+   at NHibernate.Transaction.AdoTransaction.Rollback() in c:\Users\sebros\Documents\My Projects\nhibernate-core\src\NHibernate\Transaction\AdoTransaction.c
